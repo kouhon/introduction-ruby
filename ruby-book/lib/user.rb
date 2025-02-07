@@ -36,12 +36,16 @@ class User
   end
 end
 
-user = User.new('Alice');
-user.rename_to_bob
-user.name
+user = User.new('Alice')
+puts user.class
 
-user.rename_to_carol
-user.name
+puts user.instance_of?(User)
+puts user.instance_of?(String)
 
-user.rename_to_dave
-user.name
+puts user.instance_of?(Object)
+
+puts user.is_a?(User)
+puts user.is_a?(Object)
+puts user.is_a?(BasicObject)
+
+puts user.is_a?(String)

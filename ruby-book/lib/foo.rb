@@ -1,4 +1,8 @@
 class Foo
+  3.times do
+    puts 'Hello'
+  end
+  
   puts "クラス構文の直下のself: #{self}"
 
   def self.break
@@ -6,15 +10,13 @@ class Foo
   end
 
   def self.bar
-    self.baz
+    puts 'hello'
   end
 
-  def baz
-    self.bar
-  end
+  self.bar
+
 end
 
 Foo.break
 
 foo = Foo.new
-foo.baz
