@@ -5,6 +5,8 @@ class Product
     @name = name
     @price = price
   end
-end
 
-product = Product.new('A greate movie', 1000)
+  def to_s
+    "name: #{name}, price: #{price}"
+  end
+end
