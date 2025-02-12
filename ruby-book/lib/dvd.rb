@@ -1,21 +1,15 @@
 require_relative 'product'
 
 class DVD < Product
-  attr_reader :running_time
+  private
 
-  def initialize(name, price, running_time)
-    # Call the initialize method of the Product class
-    super(name, price)
-    @running_time = running_time
-  end
-
-  def to_s
-    "#{super}, running_time: #{running_time}"
+  def name
+    'An awesome film'
   end
 end
 
-product = Product.new('A great movie', 1000)
-puts product.to_s
+product = Product.new
+puts product
 
-dvd = DVD.new('An awesome film', 3000, 120)
-puts dvd.to_s
+dvd = DVD.new
+puts dvd

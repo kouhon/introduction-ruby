@@ -1,12 +1,11 @@
 class Product
-  attr_reader :name, :price
-
-  def initialize(name, price)
-    @name = name
-    @price = price
+  def to_s
+    "name: #{name}"
   end
 
-  def to_s
-    "name: #{name}, price: #{price}"
+  private
+
+  def name
+    'A great movie'
   end
 end
