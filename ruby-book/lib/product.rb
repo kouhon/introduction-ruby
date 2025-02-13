@@ -1,8 +1,4 @@
 class Product
-  def to_s
-    "name: #{name}"
-  end
-
   private
 
   def name

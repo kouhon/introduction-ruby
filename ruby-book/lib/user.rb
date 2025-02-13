@@ -1,11 +1,7 @@
 class User
-  private 
-
   def foo
-  end
-
-  public
-
-  def bar
+    'foo'
   end
 end
+
+puts User.hello

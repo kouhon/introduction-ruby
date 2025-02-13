@@ -1,7 +1,7 @@
 require_relative 'product'
 
 class DVD < Product
-  private
+  public
 
   def name
     'An awesome film'
@@ -9,7 +9,7 @@ class DVD < Product
 end
 
 product = Product.new
-puts product
+puts product.name
 
 dvd = DVD.new
-puts dvd
+puts dvd.name
