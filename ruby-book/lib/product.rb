@@ -1,7 +1,5 @@
 class Product
-  private
-
-  def name
-    'A great movie'
-  end
+  DEFAULT_PRICE = 0
 end
+
+puts Product::DEFAULT_PRICE
