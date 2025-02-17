@@ -1,5 +1,8 @@
 class Product
-  DEFAULT_PRICE = 0
+  SOME_NAMES = ['Foo', 'Bar', 'Baz'].map(&:freeze).freeze
 end
 
-puts Product::DEFAULT_PRICE
+Product::SOME_NAMES[0].upcase!
+puts Product::SOME_NAMES
+
+
