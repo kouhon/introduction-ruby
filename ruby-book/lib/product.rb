@@ -1,8 +1,14 @@
 class Product
-  SOME_NAMES = ['Foo', 'Bar', 'Baz'].map(&:freeze).freeze
+
+  def self.name
+    @@name
+  end
+
+  def initialize(name)
+    @@name = name
+  end
+
+  def name
+    @@name
+  end
 end
-
-Product::SOME_NAMES[0].upcase!
-puts Product::SOME_NAMES
-
-

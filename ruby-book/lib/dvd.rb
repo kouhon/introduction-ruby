@@ -1,15 +1,26 @@
 require_relative 'product'
 
 class DVD < Product
-  public
+  @@name = 'DVD'
 
-  def name
-    'An awesome film'
+  def self.name
+    @@name
+  end
+
+  def upcase_name
+    @@name.upcase
   end
 end
 
-product = Product.new
+puts Product.name
+puts DVD.name
+
+product = Product.new('A great movie')
 puts product.name
 
-dvd = DVD.new
+dvd = DVD.new('An awesome film')
 puts dvd.name
+puts dvd.upcase_name
+
+puts Product.name
+puts DVD.name
