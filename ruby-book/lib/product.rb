@@ -1,28 +1,15 @@
 class Product
-  attr_reader :code, :name
-
-  def initialize(code, name)
-    @code = code
+  def initialize(name, price)
     @name = name
+    @price = price
   end
 
-  def ==(other)
-    other.is_a?(Product) && code == other.code
+  def display_text
+    stock = stock? ? 'あり' : 'なし'
+    "商品名: #{@name} 価格: #{@price}円 在庫: #{stock}"
+  end
+
+  def stock?
+    raise 'must implement stock? in subclass'
   end
 end
-
-a = Product.new('A-0001', 'A greate show')
-b = Product.new('B-0002', 'An awesome film')
-c = Product.new('C-0003', 'A fantastic film')
-
-puts a == b
-puts a == c
-puts a == a
-
-puts a == 1
-puts a == 'a'
-
-puts a.==(b)
-puts a.==(c)
-
-puts 1 == a
