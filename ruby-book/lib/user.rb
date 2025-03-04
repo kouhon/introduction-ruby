@@ -1,22 +1,18 @@
+require_relative 'product'
+require_relative 'loggable'
 class User
-  def initialize(name)
-    @name = name
-  end
+  include Loggable
 
-  def hello
-    "Hello, #{@name}."
-  end
-end
-
-def User.hello
-  'Hello.'
-end
-
-class << User
-  def hi
-    'Hi.'
+  def name
+    log 'name is called'
+    'Alice'
   end
 end
 
-puts User.hello;
-puts User.hi;
+product = Product.new
+puts product.title
+
+user = User.new
+puts user.name
+
+product.log 'public?'

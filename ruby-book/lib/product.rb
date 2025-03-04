@@ -1,15 +1,23 @@
+require_relative 'loggable'
+require_relative 'taggable'
+
 class Product
-  def initialize(name, price)
-    @name = name
-    @price = price
+  extend Loggable
+
+  def self.create_products(names)
+    log 'create_products is called'
   end
 
-  def display_text
-    stock = stock? ? 'あり' : 'なし'
-    "商品名: #{@name} 価格: #{@price}円 在庫: #{stock}"
+  def price
+    1000
   end
 
-  def stock?
-    raise 'must implement stock? in subclass'
+  def title
+    log 'title is called'
+    'A great movie'
   end
 end
+
+Product.create_products([])
+
+Product.log('Hello')
