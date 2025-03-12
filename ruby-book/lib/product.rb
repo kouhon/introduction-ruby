@@ -2,7 +2,9 @@ require_relative 'loggable'
 require_relative 'taggable'
 
 class Product
-  extend Loggable
+  # extend Loggable
+
+  log 'Defined Product class'
 
   def self.create_products(names)
     log 'create_products is called'
@@ -17,6 +19,9 @@ class Product
     'A great movie'
   end
 end
+
+Product.include Loggable
+Product.extend Loggable
 
 Product.create_products([])
 
