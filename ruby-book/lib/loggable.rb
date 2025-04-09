@@ -3,3 +3,9 @@ module Loggable
     puts "[LOG] #{text}"
   end
 end
+
+s = 'abc'
+# s.log('Hello')
+
+s.extend Loggable
+s.log('Hello')

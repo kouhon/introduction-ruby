@@ -1,18 +1,21 @@
-require_relative 'product'
-require_relative 'loggable'
-class User
-  include Loggable
-
-  def name
-    log 'name is called'
-    'Alice'
+module NameChangeable
+  def change_name
+    self.name = 'ありす'
   end
 end
 
-product = Product.new
-puts product.title
+class User
+  include NameChangeable
 
-user = User.new
-puts user.name
+  attr_accessor :name
 
-product.log 'public?'
+  def initialize(name)
+    @name = name
+  end
+end
+
+user = User.new('Alice')
+p user.name
+
+user.change_name
+p user.name
