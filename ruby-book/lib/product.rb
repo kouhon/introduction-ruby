@@ -4,7 +4,10 @@ require_relative 'taggable'
 class Product
   include Loggable
 
-  # log 'Defined Product class'
+  def title
+    log 'title is called'
+    'A great movie'
+  end
 
   def self.create_products(names)
     log 'create_products is called'
@@ -20,19 +23,7 @@ class Product
   end
 end
 
-# puts Product.include?(Loggable)
-# puts Product.included_modules
-# puts Product.ancestors
+product = Product.new
+product.title
+product.log 'Hello.'
 
-# product = Product.new
-# puts product.class.include?(Loggable)
-# puts product.class.included_modules
-
-# puts product.is_a?(Product)
-# puts product.is_a?(Loggable)
-# puts product.is_a?(Object)
-
-puts Array.include?(Enumerable)
-puts Hash.include?(Enumerable)
-puts Range.include?(Enumerable)
-puts String.include?(Enumerable)

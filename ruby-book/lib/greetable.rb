@@ -4,8 +4,20 @@ module Greetable
   end
 end
 
-greetable = Greetable.new
+module Aisatu
+  include Greetable
 
-module AwesomeGreetable < Greetable
-  
+  def konnichiwa
+    'こんにちは'
+  end
 end
+
+class User
+  include Aisatu
+end
+
+user = User.new
+puts user.konnichiwa
+puts user.hello
+
+puts User.ancestors

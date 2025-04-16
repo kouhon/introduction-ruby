@@ -1,11 +1,9 @@
 module Loggable
+  PREFIX = '[LOG]'
+
   def log(text)
     puts "[LOG] #{text}"
   end
 end
 
-s = 'abc'
-# s.log('Hello')
-
-s.extend Loggable
-s.log('Hello')
+puts Loggable::PREFIX
