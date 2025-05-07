@@ -1,21 +1,24 @@
-module NameChangeable
-  def change_name
-    self.name = 'ありす'
-  end
-end
+require_relative 'string_shuffle'
+
+# puts 'Alice'.shuffle
+
+using StringShuffle
+
+puts 'Alice'.shuffle
 
 class User
-  include NameChangeable
-
-  attr_accessor :name
+  using StringShuffle
 
   def initialize(name)
     @name = name
   end
+
+  def shuffled_name
+    @name.shuffle
+  end
 end
 
 user = User.new('Alice')
-p user.name
+puts user.shuffled_name
 
-user.change_name
-p user.name
+puts 'Alice'.shuffle

@@ -1,29 +1,16 @@
-require_relative 'loggable'
-require_relative 'taggable'
+module NameDecorator
+  def name
+    "<<#{super}>>"
+  end
+end
 
 class Product
-  include Loggable
+  prepend NameDecorator
 
-  def title
-    log 'title is called'
-    'A great movie'
-  end
-
-  def self.create_products(names)
-    log 'create_products is called'
-  end
-
-  def price
-    1000
-  end
-
-  def title
-    log 'title is called'
+  def name
     'A great movie'
   end
 end
 
 product = Product.new
-product.title
-product.log 'Hello.'
-
+puts product.name
